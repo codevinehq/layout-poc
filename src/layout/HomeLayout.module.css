@@ -1,0 +1,30 @@
+.wrapper {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "content"
+    "sidebar-start"
+    "sidebar-end";
+  gap: 1rem;
+}
+
+/* Grid areas */
+.wrapper .sidebar-start {
+  grid-area: sidebar-start;
+}
+.wrapper .sidebar-end {
+  grid-area: sidebar-end;
+}
+.wrapper .content {
+  grid-area: content;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar-start content sidebar-end";
+  }
+}

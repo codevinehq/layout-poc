@@ -1,0 +1,34 @@
+.wrapper {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "nav"
+    "content"
+    "sidebar";
+  gap: 1rem;
+}
+
+/* Grid areas */
+.wrapper .nav {
+  grid-area: nav;
+}
+.wrapper .sidebar {
+  grid-area: sidebar;
+}
+.wrapper .content {
+  grid-area: content;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "nav content"
+      "sidebar content"
+      "footer footer";
+  }
+}
